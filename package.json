@@ -1,0 +1,20 @@
+{
+    "name": "api-rest",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "dev": "nodemon rest/index.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "cors": "^2.8.4",
+        "express": "^4.16.4",
+        "mysql": "^2.16.0"
+    },
+    "devDependencies": {
+        "nodemon": "^1.18.4"
+    }
+}
