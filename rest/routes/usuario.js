@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const route = express.Router();
 
+
 const mysqlConnection = require('../database');
 
 //ruta inicial para tener los datos
@@ -18,12 +19,10 @@ route.get('/', (req, res) => {
 });
 
 //Registro de Usuarios
-route.post('/users', cors(), (req, res) => {
-    //variable hash para encriptar la contraseña
-    const hash = cryptr.encrypt(req.body.passw);
+route.post('/usuario', cors(), (req, res) => {
     //ingreso de los usuarios en la base de datos
     const { Nombres_Apellidos, Celular, email, passw, Foto_Perfil} = req.body;
-    passw = hash;
+    //variable hash para encriptar la contraseña
     const query = `CALL AddUser (?, ?, ?, ?, ?)`;
     mysqlConnection.query(query, [Nombres_Apellidos, Celular, email, passw, Foto_Perfil], (err, rows, fields) => {
         if (err) return res.json(err);

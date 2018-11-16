@@ -13,6 +13,7 @@ app.set('port', process.env.PORT || 3100);
 // Routes
 app.use(require('./routes/conductor'));
 app.use(require('./routes/usuario'));
+app.use(require('./routes/servicio'));
 
 // Inicializar servidor
 app.listen(app.get('port'), () => {
