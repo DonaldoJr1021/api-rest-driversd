@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 
+
 //Funciones de procesamiento
 app.use(express.json());
 //uso de cors
